@@ -1,0 +1,36 @@
+package pobj.pinboard.document;
+
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
+
+public class ClipEllipse extends AbstractClip implements Clip {
+    
+    double cx = (super.getLeft() + super.getRight())/2; // centre de l'éllipse
+    double cy = (super.getTop() + super.getBottom())/2; // centre de l'éllipse 
+    double rx = (super.getRight() - super.getLeft())/2; // rayon de l'éllipse
+    double ry = (super.getBottom() - super.getTop())/2; // rayon de l'éllipse
+
+    public ClipEllipse(double left, double top, double right, double bottom, Color color) {
+        super(left, top, right, bottom, color);
+        // TODO Auto-generated constructor stub
+    }
+    
+    @Override
+    public boolean isSelected(double x, double y) {
+        // TODO Auto-generated method stub
+        return ( ( Math.pow(((x-cx)/rx),2) + Math.pow(((y-cy)/ry),2) ) <= 1 );
+    }
+    
+    @Override
+    public void draw(GraphicsContext ctx) {
+        // TODO Auto-generated method stub
+
+    }
+    
+    @Override
+    public Clip copy() {
+        // TODO Auto-generated method stub
+        return new ClipRect(super.getLeft(), super.getTop(), super.getRight(), super.getBottom(), super.getColor());
+    }
+
+}
