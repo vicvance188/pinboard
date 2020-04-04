@@ -1,5 +1,6 @@
 package pobj.pinboard.document;
 
+import javafx.scene.paint.Color;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,6 +40,7 @@ public class Board {
     
     public void draw(GraphicsContext gc) {
         // Dessine un carré blanc pour faire une 'page' vierge
+        gc.setFill(Color.WHITE);
         gc.fillRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
         // Dessine le contenu de notre plateau
         for(Clip clip : this.getContents())

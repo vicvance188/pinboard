@@ -24,13 +24,15 @@ public class ClipEllipse extends AbstractClip implements Clip {
     @Override
     public void draw(GraphicsContext ctx) {
         // TODO Auto-generated method stub
+        ctx.setFill(super.getColor());
+        ctx.fillOval(getLeft(), getTop(), getWidth(), getHeight());
 
     }
     
     @Override
     public Clip copy() {
         // TODO Auto-generated method stub
-        return new ClipRect(super.getLeft(), super.getTop(), super.getRight(), super.getBottom(), super.getColor());
+        return new ClipEllipse(super.getLeft(), super.getTop(), super.getRight(), super.getBottom(), super.getColor());
     }
 
 }

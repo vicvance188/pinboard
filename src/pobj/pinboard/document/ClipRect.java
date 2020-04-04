@@ -13,6 +13,9 @@ public class ClipRect extends AbstractClip implements Clip {
     @Override
     public void draw(GraphicsContext ctx) {
         // TODO Auto-generated method stub
+        ctx.setFill(super.getColor());
+        ctx.fillRect(getLeft(), getTop(), getWidth(), getHeight());
+        
 
     }
 

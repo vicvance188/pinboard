@@ -3,7 +3,7 @@ package pobj.pinboard.document;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public class AbstractClip implements Clip{
+public abstract class AbstractClip implements Clip {
 
     private double left, top, right, bottom;
     private Color  color;
@@ -17,10 +17,7 @@ public class AbstractClip implements Clip{
     }
 
     @Override
-    public void draw(GraphicsContext ctx) {
-        // TODO Auto-generated method stub
-
-    }
+    public abstract void draw(GraphicsContext ctx);
 
     @Override
     public double getTop() {
@@ -44,6 +41,14 @@ public class AbstractClip implements Clip{
     public double getRight() {
         // TODO Auto-generated method stub
         return right;
+    }
+
+    public double getHeight() {
+        return getBottom() - getTop();
+    }
+
+    public double getWidth() {
+        return getRight() - getLeft();
     }
 
     @Override
@@ -86,8 +91,5 @@ public class AbstractClip implements Clip{
     }
 
     @Override
-    public Clip copy() {
-        // TODO Auto-generated method stub
-        return new ClipRect(this.left, this.top, this.right, this.bottom, this.color);
-    }
+    public abstract Clip copy();
 }
