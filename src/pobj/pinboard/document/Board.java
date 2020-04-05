@@ -45,7 +45,6 @@ public class Board {
         // Dessine le contenu de notre plateau
         for(Clip clip : this.getContents())
             clip.draw(gc);
-        
     }
 
 
