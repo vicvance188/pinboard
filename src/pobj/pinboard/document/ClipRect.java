@@ -7,7 +7,8 @@ public class ClipRect extends AbstractClip implements Clip {
 
 
     public ClipRect(double left, double top, double right, double bottom, Color color) {
-        super(left, top, right, bottom, color);
+        super.setGeometry(left, top, right, bottom);
+        super.setColor(color);
     }
 
     @Override

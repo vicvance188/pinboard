@@ -4,7 +4,6 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import pobj.pinboard.document.ClipEllipse;
-import pobj.pinboard.document.ClipRect;
 import pobj.pinboard.editor.EditorInterface;
 
 public class ToolEllipse implements Tool{

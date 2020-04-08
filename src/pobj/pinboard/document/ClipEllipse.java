@@ -5,15 +5,18 @@ import javafx.scene.paint.Color;
 
 public class ClipEllipse extends AbstractClip implements Clip {
     
+    
+
+    public ClipEllipse(double left, double top, double right, double bottom, Color color) {
+        super.setGeometry(left, top, right, bottom);
+        super.setColor(color);
+        // TODO Auto-generated constructor stub
+    }
+    
     double cx = (super.getLeft() + super.getRight())/2; // centre de l'éllipse
     double cy = (super.getTop() + super.getBottom())/2; // centre de l'éllipse 
     double rx = (super.getRight() - super.getLeft())/2; // rayon de l'éllipse
     double ry = (super.getBottom() - super.getTop())/2; // rayon de l'éllipse
-
-    public ClipEllipse(double left, double top, double right, double bottom, Color color) {
-        super(left, top, right, bottom, color);
-        // TODO Auto-generated constructor stub
-    }
     
     @Override
     public boolean isSelected(double x, double y) {

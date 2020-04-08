@@ -1,5 +1,7 @@
 package pobj.pinboard.editor;
 
+import java.io.File;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
@@ -11,10 +13,13 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.Separator;
 import javafx.scene.control.ToolBar;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 import pobj.pinboard.document.Board;
 import pobj.pinboard.editor.tools.Tool;
 import pobj.pinboard.editor.tools.ToolEllipse;
+import pobj.pinboard.editor.tools.ToolImage;
 import pobj.pinboard.editor.tools.ToolRect;
 
 public class EditorWindow implements EditorInterface {
@@ -59,19 +64,19 @@ public class EditorWindow implements EditorInterface {
         b2.setOnAction( (e)-> tool = new ToolEllipse());
         Button b3 = new Button("Img...");
         b3.setOnAction( (e)-> {
-            //FileChooser fc = new FileChooser();
-            //fc.setTitle("Open Resource File");
-            //fc.getExtensionFilters().addAll(
-            //         new ExtensionFilter("Image Files", ".png", ".jpg", ".gif"),
-            //         new ExtensionFilter("All Files", ".*"));
-            //File selectedFile = fc.showOpenDialog(stage);
-            //tool = new ToolImg(selectedFile);
+            FileChooser fc = new FileChooser();
+            fc.setTitle("Open Resource File");
+            fc.getExtensionFilters().addAll(
+                     new ExtensionFilter("Image Files", ".png", ".jpg", ".gif"),
+                     new ExtensionFilter("All Files", ".*"));
+            File selectedFile = fc.showOpenDialog(stage);
+            tool = new ToolImage(selectedFile);
             });
         ToolBar toolbar = new ToolBar(b1,b2,b3);
         
         
 
-        Canvas canvas = new Canvas(800, 600);
+        Canvas canvas = new Canvas(1480, 920);
 
         Separator separator = new Separator();
 

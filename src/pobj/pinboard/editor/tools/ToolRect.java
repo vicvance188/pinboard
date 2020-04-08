@@ -1,7 +1,5 @@
 package pobj.pinboard.editor.tools;
 
-import java.util.Random;
-
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;

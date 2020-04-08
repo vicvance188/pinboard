@@ -8,13 +8,13 @@ public abstract class AbstractClip implements Clip {
     private double left, top, right, bottom;
     private Color  color;
 
-    public AbstractClip(double left, double top, double right, double bottom, Color color) {
+    /*public AbstractClip(double left, double top, double right, double bottom, Color color) {
         this.left = left;
         this.top = top;
         this.right = right;
         this.bottom = bottom;
         this.color = color;
-    }
+    }*/
 
     @Override
     public abstract void draw(GraphicsContext ctx);
